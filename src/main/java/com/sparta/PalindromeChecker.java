@@ -5,17 +5,29 @@ public class PalindromeChecker {
         return str.equalsIgnoreCase(rev.toLowerCase());
     }
 
-    public boolean method_1(String str) {
+    public String method_1(String str) {
         String workingStr = str.replaceAll("[^a-zA-Z0-9]", "");
         String reverse = "";
 
         for(int i = workingStr.length() - 1; i >= 0; i--) {
             reverse += workingStr.charAt(i);
         }
-        return palindromeCheck(workingStr, reverse);
+        if(palindromeCheck(workingStr, reverse)){
+            return str + " is a palindrome.";
+        } else {
+            return str + " is not a palindrome.";
+        }
     }
 
-    public boolean method_2(String str) {
+    public String method_1(String[] str) {
+        String result = "";
+        for(String word : str) {
+            result += method_1(word) + "\n";
+        }
+        return result;
+    }
+
+    public String method_2(String str) {
         String workingStr = str.replaceAll("[^a-zA-Z0-9]", "");
         String reverse = "";
 
@@ -25,6 +37,50 @@ public class PalindromeChecker {
             reverse += workingStr.charAt(i);
             i--;
         }
-        return palindromeCheck(workingStr, reverse);
+        if(palindromeCheck(workingStr, reverse)){
+            return str + " is a palindrome.";
+        } else {
+            return str + " is not a palindrome.";
+        }
+    }
+
+    public String method_2(String[] str) {
+        String result = "";
+        for(String word : str) {
+            result += method_1(word) + "\n";
+        }
+        return result;
+    }
+
+    public String method_3(String str) {
+        String workingStr = str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        int startPoint = 0;
+        int endPoint = workingStr.length() - 1;
+        int halfPoint = endPoint / 2;
+
+        boolean result = true;
+
+        //racecar
+        while(endPoint >= halfPoint && result) {
+            startPoint++;
+            endPoint--;
+
+            if (workingStr.charAt(endPoint) != workingStr.charAt(startPoint)) {
+                result = false;
+            }
+        }
+        if(result) {
+            return str + " is a palindrome.";
+        } else {
+            return str + " is not a palindrome.";
+        }
+    }
+
+    public String method_3(String[] str) {
+        String result = "";
+        for(String word : str) {
+            result += method_1(word) + "\n";
+        }
+        return result;
     }
 }
