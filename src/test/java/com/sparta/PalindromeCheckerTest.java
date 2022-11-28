@@ -73,8 +73,13 @@ class PalindromeCheckerTest {
     @Test
     void method_1Arr() {
         String[] input = {"kayak", "rotation", "Do geese see God?", "I am not a palindrome.", "Mr. Owl ate my metal worm"};
-        String expected = "kayak is a palindrome.\nrotation is not a palindrome.\nDo geese see God? is a palindrome.\n" +
-                "I am not a palindrome. is not a palindrome.\nMr. Owl ate my metal worm is a palindrome.\n";
+        String expected = """
+                kayak is a palindrome.
+                rotation is not a palindrome.
+                Do geese see God? is a palindrome.
+                I am not a palindrome. is not a palindrome.
+                Mr. Owl ate my metal worm is a palindrome.
+                """;
         String result = new PalindromeChecker().method_1(input);
 
         assertEquals(expected, result);
@@ -84,8 +89,13 @@ class PalindromeCheckerTest {
     @Test
     void method_2Arr() {
         String[] input = {"kayak", "rotation", "Do geese see God?", "I am not a palindrome.", "Mr. Owl ate my metal worm"};
-        String expected = "kayak is a palindrome.\nrotation is not a palindrome.\nDo geese see God? is a palindrome.\n" +
-                "I am not a palindrome. is not a palindrome.\nMr. Owl ate my metal worm is a palindrome.\n";
+        String expected = """
+                kayak is a palindrome.
+                rotation is not a palindrome.
+                Do geese see God? is a palindrome.
+                I am not a palindrome. is not a palindrome.
+                Mr. Owl ate my metal worm is a palindrome.
+                """;
         String result = new PalindromeChecker().method_2(input);
 
         assertEquals(expected, result);
@@ -95,10 +105,14 @@ class PalindromeCheckerTest {
     @Test
     void method_3Arr() {
         String[] input = {"kayak", "rotation", "Do geese see God?", "I am not a palindrome.", "Mr. Owl ate my metal worm"};
-        String expected = "kayak is a palindrome.\nrotation is not a palindrome.\nDo geese see God? is a palindrome.\n" +
-                "I am not a palindrome. is not a palindrome.\nMr. Owl ate my metal worm is a palindrome.\n";
+        String expected = """
+                kayak is a palindrome.
+                rotation is not a palindrome.
+                Do geese see God? is a palindrome.
+                I am not a palindrome. is not a palindrome.
+                Mr. Owl ate my metal worm is a palindrome.
+                """;
         String result = new PalindromeChecker().method_3(input);
-
         assertEquals(expected, result);
     }
 }
